@@ -21,4 +21,7 @@ public class TwitsTableContract {
             TwitsEntry.COLUMN_NAME_ID +" INTEGER PRIMARY KEY, "+
             TwitsEntry.COLUMN_NAME_USER + " TEXT, " +
             TwitsEntry.COLUMN_NAME_TWIT+ " TEXT );";
+
+    public static String[] TWITS_PROJECTION = new String[]{TwitsEntry.COLUMN_NAME_ID, TwitsEntry.COLUMN_NAME_USER,TwitsEntry.COLUMN_NAME_TWIT};
+    public static String[] TWITS_BASIC_PROJECTION = new String[]{TwitsEntry.COLUMN_NAME_TWIT};
 }

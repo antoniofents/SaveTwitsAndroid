@@ -1,38 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/main_layout"
-    tools:context=".MainActivity">
+    tools:context="com.example.afentanes.twitsaver.MainActivity">
 
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/new_twits"/>
 
-    <Button
-        android:id="@+id/button_saver"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="save!"
-        tools:layout_editor_absoluteY="40dp"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <TextView
-        android:id="@+id/current_twits"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteY="104dp"
-        tools:layout_editor_absoluteX="7dp" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
