@@ -3,13 +3,11 @@ package com.example.afentanes.twitsaver.listeners;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.example.afentanes.twitsaver.MainActivity;
 import com.example.afentanes.twitsaver.Twit;
 import com.example.afentanes.twitsaver.db.TwitsSqlHelper;
 import com.example.afentanes.twitsaver.db.TwitsTableContract;
