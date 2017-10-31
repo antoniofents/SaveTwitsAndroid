@@ -1,6 +1,7 @@
 package com.example.afentanes.twitsaver.twiterapi;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -21,14 +22,12 @@ import java.util.List;
 public class TwitsReader {
 
 
-    private  long lastTwit;
     private List <Tweet> items;
     public  boolean newTweetsAvailable;
     private  TwitRefreshable refresher;
-    public TwitsReader (Activity activity, long lastTwit){
-        Twitter.initialize(activity);
-        this.refresher= (TwitRefreshable) activity;
-        this.lastTwit=lastTwit;
+    public TwitsReader (Context context){
+        Twitter.initialize(context);
+        this.refresher= (TwitRefreshable) context;
     }
 
 
@@ -41,10 +40,8 @@ public class TwitsReader {
         userTimeline.previous(null, new Callback<TimelineResult<Tweet>>() {
             @Override
             public void success(Result<TimelineResult<Tweet>> result) {
-                if(result.data.items.size()>0 && result.data.items.get(0).getId()!=lastTwit){
-                 //  refresher.resfreshTweets(result.data.items );
+                   refresher.resfreshTweets(result.data.items );
 
-                }
             }
 
             @Override

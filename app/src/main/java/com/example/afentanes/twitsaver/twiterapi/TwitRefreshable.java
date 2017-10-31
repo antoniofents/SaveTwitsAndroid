@@ -12,4 +12,5 @@ public interface TwitRefreshable {
 
 
     public void resfreshTweets(List<Tweet> tweets);
+    
 }

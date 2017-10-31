@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.example.afentanes.twitsaver.MainActivity;
+import com.example.afentanes.twitsaver.Twit;
 import com.example.afentanes.twitsaver.db.TwitsSqlHelper;
 import com.example.afentanes.twitsaver.db.TwitsTableContract;
 import com.example.afentanes.twitsaver.layout.SaveTwitDialogFragment;
@@ -38,10 +39,9 @@ public class SaveTwitListener implements AdapterView.OnItemClickListener {
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
         SaveTwitDialogFragment saveDialog = new SaveTwitDialogFragment();
-        SQLiteCursor itemAtPosition = (SQLiteCursor) adapterView.getItemAtPosition(i);
+        Twit twit= (Twit) adapterView.getItemAtPosition(i);
         saveDialog.setSaveListener(getSaveTwitListener(view.getContext(),
-                itemAtPosition.getString(itemAtPosition.getColumnIndex(TwitsTableContract.TwitsEntry.COLUMN_NAME_TWIT)),
-                itemAtPosition.getString(itemAtPosition.getColumnIndex(TwitsTableContract.TwitsEntry.COLUMN_NAME_USER)) ));
+                twit.author , twit.text));
         saveDialog.show(activity.getSupportFragmentManager(), "show");
     }
 
@@ -49,8 +49,7 @@ public class SaveTwitListener implements AdapterView.OnItemClickListener {
        return  new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                writeTwitIntoDatabase(context,user,twit+"a" );
-                ((MainActivity)activity).refreshMainList();
+                writeTwitIntoDatabase(context,user,twit );
             }
         };
     }
