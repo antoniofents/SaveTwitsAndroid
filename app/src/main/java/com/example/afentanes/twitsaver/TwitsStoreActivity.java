@@ -26,6 +26,7 @@ public class TwitsStoreActivity extends Activity {
     private void initListViewAdapter( ListView listView){
 
         SQLiteDatabase twitsDb= new TwitsSqlHelper(getApplicationContext()).getReadableDatabase();
+
         Cursor cursor = twitsDb.rawQuery("SELECT rowid _id , * FROM " + TwitsTableContract.TwitsEntry.TABLE_NAME, null);
 
         SimpleCursorAdapter adapter= new SimpleCursorAdapter(listView.getContext(),

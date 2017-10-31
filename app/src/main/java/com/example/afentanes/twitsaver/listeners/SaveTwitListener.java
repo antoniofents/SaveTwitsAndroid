@@ -23,12 +23,12 @@ public class SaveTwitListener implements AdapterView.OnItemClickListener {
         this.activity=appCompatActivity;
     }
 
-    private void writeTwitIntoDatabase(Context context, String twit, String user) {
+    private void writeTwitIntoDatabase(Context context, String user, String twit) {
         SQLiteDatabase twitsDb = new TwitsSqlHelper(context).getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(TwitsTableContract.TwitsEntry.COLUMN_NAME_USER,twit );
-        contentValues.put(TwitsTableContract.TwitsEntry.COLUMN_NAME_TWIT, user);
+        contentValues.put(TwitsTableContract.TwitsEntry.COLUMN_NAME_USER,user );
+        contentValues.put(TwitsTableContract.TwitsEntry.COLUMN_NAME_TWIT, twit);
 
         twitsDb.insert(TwitsTableContract.TwitsEntry.TABLE_NAME, null, contentValues);
         twitsDb.close();
@@ -45,11 +45,11 @@ public class SaveTwitListener implements AdapterView.OnItemClickListener {
         saveDialog.show(activity.getSupportFragmentManager(), "show");
     }
 
-    private DialogInterface.OnClickListener getSaveTwitListener(final Context context, final String twit, final String user){
+    private DialogInterface.OnClickListener getSaveTwitListener(final Context context, final String author, final String twit){
        return  new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                writeTwitIntoDatabase(context,user,twit );
+                writeTwitIntoDatabase(context,author,twit );
             }
         };
     }

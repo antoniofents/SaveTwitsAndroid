@@ -1,14 +1,8 @@
 package com.example.afentanes.twitsaver;
 
-import android.app.job.JobScheduler;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,20 +12,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import com.example.afentanes.twitsaver.db.TwitsSqlHelper;
-import com.example.afentanes.twitsaver.db.TwitsTableContract;
 import com.example.afentanes.twitsaver.layout.TwitsAdapter;
 import com.example.afentanes.twitsaver.listeners.SaveTwitListener;
-import com.example.afentanes.twitsaver.twiterapi.TwitRefreshable;
-import com.example.afentanes.twitsaver.twiterapi.TwitsReader;
-import com.twitter.sdk.android.core.models.Tweet;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 //import android.support.design.widget.FloatingActionButton;
@@ -49,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         recoverTwits(savedInstanceState);
         init();
         startCheckService();
-
 
     }
 
@@ -89,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                         CharSequence text = "new tweets available! " + tweets.get(0).text;
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-                        toast.setGravity(Gravity.CENTER|Gravity.CENTER, 0, 0);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     }
                 }

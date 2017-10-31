@@ -19,7 +19,6 @@ public class TwitsReaderService extends JobService implements  TwitRefreshable {
     @Override
     public boolean onStartJob(JobParameters jobParameters) {
 
-
         checkforTwits();
         jobFinished(jobParameters, true);
 
