@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">twitsaver</string>
-    <string name="save_twit">save twit</string>
+    <string name="save_twit">save twit for later</string>
     <string name="cancel_twit">cancel</string>
     <string name="save_twit_dialog_message">Would you like to save this twit?</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">6aLGl34DqGph4XOMmfP2PbzIl</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">NMp6kjGLORqLRx4pFkHxzEiws6PtmB9GhIH0d5qDEaaUbUxRk2</string>
+    <string name="twit_broadcast_receiver">com.example.afentanes.twitsaver</string>
 </resources>

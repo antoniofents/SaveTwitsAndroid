@@ -1,4 +1,4 @@
-package com.example.afentanes.twitsaver;
+package com.example.afentanes.twitsaver.listeners;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 
+import com.example.afentanes.twitsaver.MainActivity;
 import com.example.afentanes.twitsaver.db.TwitsSqlHelper;
 import com.example.afentanes.twitsaver.db.TwitsTableContract;
 import com.example.afentanes.twitsaver.layout.SaveTwitDialogFragment;
@@ -17,7 +18,7 @@ import com.example.afentanes.twitsaver.layout.SaveTwitDialogFragment;
 public class SaveTwitListener implements AdapterView.OnItemClickListener {
 
     private AppCompatActivity activity;
-    SaveTwitListener(AppCompatActivity appCompatActivity) {
+    public SaveTwitListener(AppCompatActivity appCompatActivity) {
         this.activity=appCompatActivity;
     }
 
