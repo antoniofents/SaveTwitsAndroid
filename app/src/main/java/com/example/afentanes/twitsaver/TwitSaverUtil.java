@@ -36,8 +36,5 @@ public class TwitSaverUtil {
         } else {
             Log.d("a", "Job not scheduled");
         }
-
-
-
     }
 }
