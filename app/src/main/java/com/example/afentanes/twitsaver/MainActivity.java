@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()){
-            case R.id.create_new:
+            case R.id.available_twits_item:
                 Intent intent = new Intent( this, TwitsStoreActivity.class);
                 startActivity(intent);
                 return true;
