@@ -17,9 +17,9 @@ public class SaveTwitDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
-        builder.setMessage(getResources().getString(R.string.save_twit_dialog_message))
-                .setPositiveButton(getResources().getString(R.string.save_twit), listener)
-                .setNegativeButton(R.string.cancel_twit, new DialogInterface.OnClickListener() {
+        builder.setMessage(getResources().getString(getArguments().getInt("message")))
+                .setPositiveButton(getResources().getString(getArguments().getInt("accept")), listener)
+                .setNegativeButton(getResources().getString(getArguments().getInt("cancel")), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }

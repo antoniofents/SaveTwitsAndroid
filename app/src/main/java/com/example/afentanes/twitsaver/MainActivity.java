@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         if(outState!=null){
-            persistTwits(outState);
+            saveTwitsInstance(outState);
         }
     }
 
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void persistTwits(Bundle bundle){
+    private void saveTwitsInstance(Bundle bundle){
         bundle.putParcelableArrayList("twits",  twits);
     }
 

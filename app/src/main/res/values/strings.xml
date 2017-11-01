@@ -8,4 +8,7 @@
     <string name="twit_broadcast_receiver">com.example.afentanes.twitsaver</string>
     <string name="check_twits">Check available twits</string>
     <string name="print_twits_service">com.example.afentanes.twitprinter.print</string>
+    <string name="print_twit">Print</string>
+    <string name="print_twit_dialog_message">Would you like to print this twit?</string>
+
 </resources>

@@ -4,9 +4,12 @@ import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
+import android.database.sqlite.SQLiteCursor;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.example.afentanes.twitsaver.TwitsReaderService;
+import com.example.afentanes.twitsaver.layout.SaveTwitDialogFragment;
 
 /**
  * Created by afentanes on 10/27/17.
@@ -37,4 +40,16 @@ public class TwitSaverUtil {
             Log.d("a", "Job not scheduled");
         }
     }
+
+    public static SaveTwitDialogFragment getDialogFragment(int message, int accept, int cancel){
+        Bundle bundle = new Bundle();
+        bundle.putInt("message", message);
+        bundle.putInt("accept", accept);
+        bundle.putInt("cancel", cancel);
+        SaveTwitDialogFragment saveDialog = new SaveTwitDialogFragment();
+        saveDialog.setArguments(bundle);
+        return saveDialog;
+
+    }
+
 }
