@@ -46,10 +46,12 @@ public class TwitsStoreActivity extends Activity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 SQLiteCursor itemAtPosition = (SQLiteCursor) adapterView.getItemAtPosition(i);
-                Intent intent= new Intent("com.example.afentanes.twitprinter.print");
+                Intent intent= new Intent(getResources().getString(R.string.print_twits_service));
+                intent.setPackage("com.example.afentanes.twitprinter");
                 Bundle bundle= new Bundle();
                 bundle.putLong("id",itemAtPosition.getLong(itemAtPosition.getColumnIndex(TwitsTableContract.TwitsEntry.COLUMN_NAME_ID)));
-                startService(intent);
+                intent.putExtras(bundle);
+                sendBroadcast(intent);
 
             }
         });

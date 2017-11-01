@@ -7,4 +7,5 @@
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">NMp6kjGLORqLRx4pFkHxzEiws6PtmB9GhIH0d5qDEaaUbUxRk2</string>
     <string name="twit_broadcast_receiver">com.example.afentanes.twitsaver</string>
     <string name="check_twits">Check available twits</string>
+    <string name="print_twits_service">com.example.afentanes.twitprinter.print</string>
 </resources>
