@@ -25,9 +25,9 @@ public class TwitsReader {
     private List <Tweet> items;
     public  boolean newTweetsAvailable;
     private  TwitRefreshable refresher;
-    public TwitsReader (Context context){
+    public TwitsReader (Context context,TwitRefreshable refreshable ){
         Twitter.initialize(context);
-        this.refresher= (TwitRefreshable) context;
+        this.refresher=  refreshable;
     }
 
 

@@ -32,7 +32,7 @@ public class TwitsReaderService extends JobService implements  TwitRefreshable {
 
 
     private void checkforTwits(){
-        TwitsReader twitsReader= new TwitsReader(this);
+        TwitsReader twitsReader= new TwitsReader(this, this);
         twitsReader.checkNewTwits();
     }
     @Override
