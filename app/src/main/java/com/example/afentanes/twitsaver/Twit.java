@@ -1,11 +1,9 @@
 package com.example.afentanes.twitsaver;
 
-import com.twitter.sdk.android.core.models.Tweet;
-
-
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+
+import com.twitter.sdk.android.core.models.Tweet;
 
 /**
  * Created by afentanes on 10/26/17.

@@ -3,7 +3,6 @@ package com.example.afentanes.twitsaver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,7 +16,6 @@ import android.widget.Toast;
 
 import com.example.afentanes.twitsaver.layout.TwitsAdapter;
 import com.example.afentanes.twitsaver.listeners.SaveTwitListener;
-import com.example.afentanes.twitsaver.twiterapi.TwitRefreshable;
 import com.example.afentanes.twitsaver.twiterapi.TwitsReader;
 import com.twitter.sdk.android.core.models.Tweet;
 
@@ -27,8 +25,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
-import rx.Observer;
-import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
 //import android.support.design.widget.FloatingActionButton;

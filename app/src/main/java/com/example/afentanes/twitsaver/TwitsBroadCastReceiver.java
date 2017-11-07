@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by afentanes on 10/27/17.

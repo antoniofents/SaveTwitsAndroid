@@ -1,9 +1,7 @@
 package com.example.afentanes.twitsaver.twiterapi;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
-import android.widget.ListView;
 
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;

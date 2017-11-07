@@ -1,6 +1,5 @@
 package com.example.afentanes.twitsaver;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,7 +16,6 @@ import android.widget.SimpleCursorAdapter;
 import com.example.afentanes.twitsaver.db.TwitsSqlHelper;
 import com.example.afentanes.twitsaver.db.TwitsTableContract;
 import com.example.afentanes.twitsaver.layout.SaveTwitDialogFragment;
-import com.example.afentanes.twitsaver.listeners.SaveTwitListener;
 
 
 public class TwitsStoreActivity extends AppCompatActivity {

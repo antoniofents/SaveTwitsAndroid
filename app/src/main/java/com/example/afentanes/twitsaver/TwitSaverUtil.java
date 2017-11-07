@@ -4,11 +4,9 @@ import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.content.ComponentName;
 import android.content.Context;
-import android.database.sqlite.SQLiteCursor;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.afentanes.twitsaver.TwitsReaderService;
 import com.example.afentanes.twitsaver.layout.SaveTwitDialogFragment;
 
 /**
