@@ -98,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         registerReceiver(new TwitsBroadCastReceiver() {
             @Override
             public void resfreshTweets(ArrayList<Twit> tweets) {
+                Collections.sort(twits);
+                if (twits.get(0).id != lastTweetId)
                 refreshUITwits(tweets);
             }
 
