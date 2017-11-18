@@ -25,6 +25,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
+import rx.Subscription;
+import rx.functions.Action0;
+import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 //import android.support.design.widget.FloatingActionButton;
@@ -62,24 +65,26 @@ public class MainActivity extends AppCompatActivity {
         TwitSaverUtil.scheduleJob(getApplicationContext());
         registerReceiver();*/
 
-        Observable.create((observ -> Schedulers.newThread().createWorker().schedulePeriodically(() -> {
 
-            TwitsReader twitsReader = new TwitsReader(this.getApplicationContext(), tweets -> {
-                ArrayList<Twit> convertedTwits = new ArrayList(tweets.size());
-                for (Tweet tweet : tweets) {
-                    convertedTwits.add(new Twit(tweet));
-                }
-                ;
-                observ.onNext(convertedTwits);
-            });
-            twitsReader.checkNewTwits();
+        Observable.create((observ ->
+                Schedulers.newThread().createWorker().schedulePeriodically(() -> {
+                    TwitsReader twitsReader = new TwitsReader(this.getApplicationContext(), tweets ->
+                    {
+                        ArrayList<Twit> convertedTwits = new ArrayList(tweets.size());
+                        for (Tweet tweet : tweets) {
+                            convertedTwits.add(new Twit(tweet));
+                        };
+                        observ.onNext(convertedTwits);
+                    });
+                    twitsReader.checkNewTwits();
+                }, 0, 3000, TimeUnit.MILLISECONDS))
+        ).subscribe(tweets -> {
+            List<Twit> twits = (List<Twit>) tweets;
+            Collections.sort(twits);
+            if (twits.get(0).id != lastTweetId)
+                refreshUITwits(twits);
+        });
 
-        }, 0, 3000, TimeUnit.MILLISECONDS))).subscribe(tweets -> {
-                List<Twit> twits = (List<Twit>) tweets;
-                Collections.sort(twits);
-                if (twits.get(0).id != lastTweetId)
-                    refreshUITwits(twits);
-            });
 
     }
 
